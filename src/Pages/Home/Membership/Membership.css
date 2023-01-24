@@ -1,0 +1,12 @@
+.membership-container{
+   display: flex;
+   padding: 30px;
+
+
+}
+
+.membership-btn{
+    border: 2px;
+    border-radius: 5px;
+    background-color: rgb(184, 56, 77);
+}

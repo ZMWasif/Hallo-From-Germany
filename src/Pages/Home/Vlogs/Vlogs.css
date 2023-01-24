@@ -1,0 +1,15 @@
+.vlog-btn{
+    border: 2px solid;
+    border-radius: 5px;
+    background-color: rgb(184, 56, 77);
+}
+.vlog-btn:hover{
+    background-color: rgb(134, 29, 46);
+    border-color: black;
+}
+
+.cardgroup-container{
+    margin: 8px;
+    grid-gap:20px;
+
+}

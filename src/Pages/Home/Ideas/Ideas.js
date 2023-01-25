@@ -5,7 +5,7 @@ import ideas from "../../../images/ideas.jpg";
 
 const Ideas = () => {
   return (
-    <div className="">
+    <div className="ideas-container">
       <div
         style={{
           backgroundImage: `url(${ideas})`,
@@ -15,7 +15,7 @@ const Ideas = () => {
           height: "100vh",
         }}
       >
-        <div className="text-white text-center sm:text-left ideas-container">
+        <div className="text-white text-center sm:text-left md:content-around idea-container">
           <h1>Creative ideas that will help your brand soar.</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,

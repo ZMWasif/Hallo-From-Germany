@@ -1,0 +1,13 @@
+.form-container{
+    width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+form-link{
+    text-decoration: none;
+}

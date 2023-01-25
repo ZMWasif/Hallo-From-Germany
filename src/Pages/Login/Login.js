@@ -38,7 +38,10 @@ const Login = () => {
               required
             />
           </div>
-          <div className="d-flex">
+          <Button className="login-btn w-100 px-4" type="submit">
+            Login
+          </Button>
+          <div className="d-flex mt-3">
             <p className="text-white me-2">New to Hallo From Germany?</p>
 
             <Link
@@ -49,10 +52,6 @@ const Login = () => {
               Create an account
             </Link>
           </div>
-
-          <Button className="login-btn w-100 px-4" type="submit">
-            Login
-          </Button>
         </form>
       </div>
     </div>

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Register.css";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -9,6 +11,9 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+
+  const [createUserWithEmailAndPassword] =
+    useCreateUserWithEmailAndPassword(auth);
 
   const handleNameBlur = (event) => {
     setName(event.target.value);
@@ -31,6 +36,11 @@ const Register = () => {
       setError("Your Passwords did not match");
       return;
     }
+    if (password.length < 6) {
+      setError("Your Password must be more than 6 characters");
+      return;
+    }
+    createUserWithEmailAndPassword(email, password);
   };
 
   return (
@@ -101,7 +111,10 @@ const Register = () => {
             />
           </div>
           <p style={{ color: "red" }}>{error}</p>
-          <div className="mb-3">
+          <Button className="login-btn w-100 px-4" type="submit">
+            Sign Up
+          </Button>
+          <div className="mb-3 mt-3">
             <Link
               className="form-check-label text-white form-link"
               to="/login"
@@ -110,9 +123,6 @@ const Register = () => {
               Already Registered?
             </Link>
           </div>
-          <Button className="login-btn w-100 px-4" type="submit">
-            Sign Up
-          </Button>
         </form>
       </div>
     </div>

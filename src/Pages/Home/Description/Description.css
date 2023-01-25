@@ -22,7 +22,7 @@
     color: aliceblue;
  }
  .description-container{
-    background-color: rgb(55 65 81);
+   background-image: linear-gradient(#0F2027, #203A43, #2C5364);
  }
  @media only screen and (min-width:577px) and (max-width:992px){
     .description-container{

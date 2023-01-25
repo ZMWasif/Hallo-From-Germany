@@ -5,6 +5,9 @@
     border-radius: 10px;
     box-shadow: 5px 5px 5px  black;
 }
+.quote-container{
+    background-image: linear-gradient(#0F2027, #203A43, #2C5364);
+}
 
 
 

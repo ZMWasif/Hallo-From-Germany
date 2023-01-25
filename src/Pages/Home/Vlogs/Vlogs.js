@@ -1,9 +1,10 @@
 import React from "react";
-import { Button, Card, CardGroup } from "react-bootstrap";
+import { Anchor, Button, Card, CardGroup } from "react-bootstrap";
 import "./Vlogs.css";
 import amsterdam from "../../../images/vlogs/amsterdam.jpg";
 import greece from "../../../images/vlogs/greece.jpg";
 import portugal from "../../../images/vlogs/portugal.jpg";
+import { Link, Navigate } from "react-router-dom";
 
 const Vlogs = () => {
   return (
@@ -25,9 +26,15 @@ const Vlogs = () => {
                 lead-in to additional content. This content is a little bit
                 longer.
               </Card.Text>
-              <Button className="vlog-btn border-rounded-2xl w-30">
-                Watch Now
-              </Button>
+              <a
+                href="https://www.youtube.com/watch?v=FnA8jzEo_KQ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="vlog-btn border-rounded-2xl w-30">
+                  Watch Now
+                </Button>
+              </a>
             </Card.Body>
           </Card>
           <Card className="card-container">
@@ -38,7 +45,13 @@ const Vlogs = () => {
                 This card has supporting text below as a natural lead-in to
                 additional content.{" "}
               </Card.Text>
-              <Button className="vlog-btn w-30">Watch Now</Button>
+              <a
+                href="https://www.youtube.com/watch?v=g7_hps44dCE"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="vlog-btn w-30">Watch Now</Button>
+              </a>
             </Card.Body>
           </Card>
           <Card className="card-container">
@@ -49,9 +62,15 @@ const Vlogs = () => {
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content.
               </Card.Text>
-              <Button className="vlog-btn w-30 justify-center">
-                Watch Now
-              </Button>
+              <a
+                href="https://www.youtube.com/watch?v=KDf_SU9iuY4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="vlog-btn w-30 justify-center">
+                  Watch Now
+                </Button>
+              </a>
             </Card.Body>
           </Card>
         </CardGroup>

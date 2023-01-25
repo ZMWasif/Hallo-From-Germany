@@ -27,12 +27,11 @@ const Description = () => {
                   <Card.Text className="text-light mt-5">
                     Our Creative content reflects all
                   </Card.Text>
-                  <Card.Link
-                    className="btn btn-light profile-button mb-5"
-                    href="#"
-                  >
-                    Try it now
-                  </Card.Link>
+                  <a href="https://www.youtube.com/@HallofromGermany">
+                    <Card.Link className="btn btn-light profile-button mb-5">
+                      Try it now
+                    </Card.Link>
+                  </a>
                 </Card.Body>
               </Card>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
@@ -11,8 +11,9 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  const [createUserWithEmailAndPassword] =
+  const [createUserWithEmailAndPassword, user] =
     useCreateUserWithEmailAndPassword(auth);
 
   const handleNameBlur = (event) => {
@@ -28,6 +29,10 @@ const Register = () => {
   const handleConfirmPasswordBlur = (event) => {
     setConfirmPassword(event.target.value);
   };
+
+  if (user) {
+    navigate("/home");
+  }
 
   const handleCreateUser = (event) => {
     event.preventDefault();
@@ -50,7 +55,7 @@ const Register = () => {
         <form onSubmit={handleCreateUser}>
           <div className="mb-3">
             <label
-              for="exampleInputPassword1"
+              htmlfor="exampleInputPassword1"
               className="form-label text-white"
             >
               Your Name
@@ -65,7 +70,10 @@ const Register = () => {
           </div>
 
           <div className="mb-3">
-            <label for="exampleInputEmail1" className="form-label text-white">
+            <label
+              htmlfor="exampleInputEmail1"
+              className="form-label text-white"
+            >
               Email address
             </label>
             <input
@@ -82,7 +90,7 @@ const Register = () => {
           </div>
           <div className="mb-3">
             <label
-              for="exampleInputPassword1"
+              htmlfor="exampleInputPassword1"
               className="form-label text-white"
             >
               Password
@@ -97,7 +105,7 @@ const Register = () => {
           </div>
           <div className="mb-3">
             <label
-              for="exampleInputPassword1"
+              htmlfor="exampleInputPassword1"
               className="form-label text-white"
             >
               Confirm Password
@@ -118,7 +126,7 @@ const Register = () => {
             <Link
               className="form-check-label text-white form-link"
               to="/login"
-              for="exampleCheck1"
+              htmlfor="exampleCheck1"
             >
               Already Registered?
             </Link>

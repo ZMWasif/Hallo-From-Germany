@@ -1,6 +1,6 @@
 .quote{
-    background-color: whitesmoke;
-    color: black;
+    background-image: linear-gradient(#780206, #061161);
+    color: white;
     border-width: 1px solid;
     border-radius: 10px;
     box-shadow: 5px 5px 5px  black;

@@ -7,28 +7,35 @@ const Description = () => {
   return (
     <div className="mt-8 description-container">
       <div className="row justify-content-evenly">
-        <div className="col-4">
-          <h1 className="text-white">
-            HALLO FROM <span className="text-danger">GERMANY</span>
-          </h1>
-          <p className="text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
-            nemo?
-          </p>
+        <div className="col-4 title-container">
           <div>
-            <Card className="profile-card " style={{ width: "20rem" }}>
-              <Card.Body>
-                <Card.Text className="text-light mt-5">
-                  Our Creative content reflects all
-                </Card.Text>
-                <Card.Link
-                  className="btn btn-light profile-button mb-5"
-                  href="#"
-                >
-                  Try it now
-                </Card.Link>
-              </Card.Body>
-            </Card>
+            <div>
+              <h1 className="text-white">
+                HALLO FROM <span className="text-danger">GERMANY</span>
+              </h1>
+            </div>
+
+            <div>
+              <p className="text-white">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Suscipit, nemo?
+              </p>
+            </div>
+            <div>
+              <Card className="profile-card " style={{ width: "400px" }}>
+                <Card.Body>
+                  <Card.Text className="text-light mt-5">
+                    Our Creative content reflects all
+                  </Card.Text>
+                  <Card.Link
+                    className="btn btn-light profile-button mb-5"
+                    href="#"
+                  >
+                    Try it now
+                  </Card.Link>
+                </Card.Body>
+              </Card>
+            </div>
           </div>
         </div>
         <div className="col-4">

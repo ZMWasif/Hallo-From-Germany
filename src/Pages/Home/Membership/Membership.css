@@ -7,7 +7,12 @@
 }
 
 .membership-btn{
-    border: 2px;
+    border: 2px solid black;
     border-radius: 5px;
-    background-color: rgb(184, 56, 77);
+    background-image: linear-gradient(#c04848, #480048);
+    margin: 0 auto;
+}
+
+.membership-btn:hover{
+    background-image: linear-gradient(#c31432, #240b36);
 }

@@ -9,12 +9,14 @@ const Vlogs = () => {
   return (
     <div>
       <div>
-        <h1 className="text-white text-center">My Latest Travel Vlogs</h1>
+        <h1 className="text-white text-center">
+          My Latest <span className="text-danger">Travel</span> Vlogs
+        </h1>
         <br />
       </div>
       <div>
         <CardGroup className="cardgroup-container">
-          <Card className="">
+          <Card className="card-container">
             <Card.Img variant="top" src={amsterdam} />
             <Card.Body>
               <Card.Title>Amsterdam Tour</Card.Title>
@@ -28,7 +30,7 @@ const Vlogs = () => {
               </Button>
             </Card.Body>
           </Card>
-          <Card>
+          <Card className="card-container">
             <Card.Img variant="top" src={greece} />
             <Card.Body>
               <Card.Title>Greece Tour</Card.Title>
@@ -39,7 +41,7 @@ const Vlogs = () => {
               <Button className="vlog-btn w-30">Watch Now</Button>
             </Card.Body>
           </Card>
-          <Card>
+          <Card className="card-container">
             <Card.Img variant="top" src={portugal} />
             <Card.Body>
               <Card.Title>Lisbon tour</Card.Title>

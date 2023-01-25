@@ -1,19 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { Form, Link } from "react-router-dom";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { Form, Link, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 import "./Login.css";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
+  const handleEmailBlur = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordBlur = (event) => {
+    setPassword(event.target.value);
+  };
+  if (user) {
+    navigate("/home");
+  }
+
+  const handleUserSignIn = (event) => {
+    event.preventDefault();
+    signInWithEmailAndPassword(email, password);
+  };
+
   return (
     <div className="form-container">
       <div className="container w-100 mx-auto">
         <h2 className="text-white text-center mt-4">Login</h2>
-        <form>
+        <form onSubmit={handleUserSignIn}>
           <div className="mb-3">
-            <label for="exampleInputEmail1" className="form-label text-white">
+            <label
+              htmlfor="exampleInputEmail1"
+              className="form-label text-white"
+            >
               Email address
             </label>
             <input
+              onBlur={handleEmailBlur}
               type="email"
               className="form-control"
               id="exampleInputEmail1"
@@ -26,18 +54,21 @@ const Login = () => {
           </div>
           <div className="mb-3">
             <label
-              for="exampleInputPassword1"
+              htmlfor="exampleInputPassword1"
               className="form-label text-white"
             >
               Password
             </label>
             <input
+              onBlur={handlePasswordBlur}
               type="password"
               className="form-control"
               id="exampleInputPassword1"
               required
             />
           </div>
+          <p style={{ color: "red" }}>{error?.message}</p>
+          {loading && <p className="text-white">Loading...</p>}
           <Button className="login-btn w-100 px-4" type="submit">
             Login
           </Button>
@@ -47,7 +78,7 @@ const Login = () => {
             <Link
               className="form-check-label text-white form-link"
               to="/register"
-              for="exampleCheck1"
+              htmlfor="exampleCheck1"
             >
               Create an account
             </Link>

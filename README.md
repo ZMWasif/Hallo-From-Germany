@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Live Site Link: https://hallo-from-germany.web.app/
+
+Here in this project:
+
+1. We have designed a website which is an influncer website.
+2. We have created a home page where we have a header, banner, some vlog sections and a footer.
+3. We have discussed some topics and showed it to the Blogs page.
+4. We have created a product page using requiredAuth.
+5. We have also implemented Sign up and Login Authentication.
+
 ## Available Scripts
 
 In the project directory, you can run:

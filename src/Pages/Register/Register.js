@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -119,7 +120,7 @@ const Register = () => {
             />
           </div>
           <p style={{ color: "red" }}>{error}</p>
-          <Button className="login-btn w-100 px-4" type="submit">
+          <Button className="login-btn w-50 d-block mx-auto px-4" type="submit">
             Sign Up
           </Button>
           <div className="mb-3 mt-3">
@@ -128,10 +129,11 @@ const Register = () => {
               to="/login"
               htmlfor="exampleCheck1"
             >
-              Already Registered?
+              Already Registered? Please Login
             </Link>
           </div>
         </form>
+        <SocialLogin></SocialLogin>
       </div>
     </div>
   );

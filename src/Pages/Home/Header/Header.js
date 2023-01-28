@@ -1,3 +1,5 @@
+import { faSignOut } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { signOut } from "firebase/auth";
 import React from "react";
 import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
@@ -34,8 +36,8 @@ const Header = () => {
               <Nav.Link as={Link} to="/products">
                 Products
               </Nav.Link>
-              <Nav.Link as={Link} to="/reviews">
-                Reviews
+              <Nav.Link as={Link} to="/blogs">
+                Blogs
               </Nav.Link>
               <NavDropdown title="Features" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">
@@ -58,7 +60,7 @@ const Header = () => {
               {user ? (
                 <Button className="signout-btn" onClick={handleSignOut}>
                   {" "}
-                  Sign Out{" "}
+                  Sign Out <FontAwesomeIcon icon={faSignOut}></FontAwesomeIcon>
                 </Button>
               ) : (
                 <Nav.Link as={Link} to="/login">

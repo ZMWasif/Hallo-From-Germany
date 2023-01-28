@@ -11,6 +11,7 @@ import Vlogs from "./Pages/Home/Vlogs/Vlogs";
 import Products from "./Pages/Products/Products";
 import RequireAuth from "./Pages/RequireAuth/RequireAuth";
 import Reviews from "./Pages/Reviews/Reviews";
+import Blogs from "./Pages/Blogs/Blogs";
 
 function App() {
   return (
@@ -20,7 +21,14 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/reviews" element={<Reviews></Reviews>}></Route>
-        <Route path="/vlogs" element={<Vlogs></Vlogs>}></Route>
+        <Route
+          path="/blogs"
+          element={
+            <RequireAuth>
+              <Blogs></Blogs>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/about" element={<ABout></ABout>}></Route>
         <Route
           path="/products"

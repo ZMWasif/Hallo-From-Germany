@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
 
 const Login = () => {
@@ -14,6 +18,8 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathName || "/";
 
+  let errorElement;
+
   const handleEmailBlur = (event) => {
     setEmail(event.target.value);
   };
@@ -21,13 +27,28 @@ const Login = () => {
   const handlePasswordBlur = (event) => {
     setPassword(event.target.value);
   };
+
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
   if (user) {
     navigate(from, { replace: true });
+  }
+  if (error) {
+    errorElement = (
+      <div>
+        <p className="text-danger">Error: {error.message}</p>
+      </div>
+    );
   }
 
   const handleUserSignIn = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
+  };
+
+  const resetPassword = async () => {
+    await sendPasswordResetEmail(email);
+    alert("Sent Email");
   };
 
   return (
@@ -71,9 +92,22 @@ const Login = () => {
           </div>
           <p style={{ color: "red" }}>{error?.message}</p>
           {loading && <p className="text-white">Loading...</p>}
-          <Button className="login-btn w-100 px-4" type="submit">
+          <Button
+            className="login-btn w-50 d-block mx-auto px-4 mb-3"
+            type="submit"
+          >
             Login
           </Button>
+          <Link
+            onClick={resetPassword}
+            className="form-check-label text-white form-link"
+            to="/register"
+            htmlfor="reset password"
+          >
+            Forget Password?
+          </Link>
+          {errorElement}
+
           <div className="d-flex mt-3">
             <p className="text-white me-2">New to Hallo From Germany?</p>
 
@@ -85,6 +119,7 @@ const Login = () => {
               Create an account
             </Link>
           </div>
+          <SocialLogin></SocialLogin>
         </form>
       </div>
     </div>

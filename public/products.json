@@ -2,21 +2,21 @@
     {
         "id": 1,
         "name": "Eye Liner",
-        "price": "$ 30",
+        "price": "30",
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/SXJPtfm/cosmetic-eyeliner-packaging-mockup-47987-3330.jpg"
     },
     {
         "id": 2,
         "name": "Mascara",
-        "price": "$ 20",
+        "price": "20",
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/bNv7xHd/black-mascara-eyes.jpg"
     },
     {
         "id": 3,
         "name": "Lipstick",
-        "price": "$ 15",
+        "price": "15",
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/fN5smPy/cosmetic-parts-face-beauty.jpg"
     }]

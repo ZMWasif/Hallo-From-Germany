@@ -12,6 +12,7 @@ import Products from "./Pages/Products/Products";
 import RequireAuth from "./Pages/RequireAuth/RequireAuth";
 import Reviews from "./Pages/Reviews/Reviews";
 import Blogs from "./Pages/Blogs/Blogs";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

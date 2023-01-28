@@ -11,8 +11,11 @@ const ABout = () => {
         <Card.Body>
           <Card.Title>Novera Binte Alam</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            This is Novera here. I am basically from Bangladesh but currently
+            living in Germany. So I created this little platform called “Hallo
+            from Germany” to share my everyday lifestyle vlogs 👗, travel
+            experiences ✈️, fashion and beauty tips with you all. And also I
+            would love to share more interesting things about Germany.
           </Card.Text>
         </Card.Body>
       </Card>

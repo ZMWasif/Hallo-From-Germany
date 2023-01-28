@@ -1,0 +1,15 @@
+.cardgroup-container{
+    margin: 8px;
+    grid-gap:20px;
+
+}
+.card-container{
+    
+    color: white;
+    background-image: linear-gradient(#0F2027, #203A43, #2C5364);
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px 5px black;
+    border-radius: 8px;
+    
+}
+
